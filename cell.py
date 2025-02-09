@@ -1,3 +1,4 @@
+from tkinter.constants import FALSE
 from point import Point
 from line import Line
 
@@ -32,3 +33,13 @@ class Cell:
         if self.down_wall is True:
             line=Line(bottom_right_point, bottom_left)
             self._win.draw_line(line,"black")
+
+    def draw_move(self, to_cell, undo=False):
+        self_centre=Point((self._x1+self._x2)/2,(self._y1+self._y2)/2)
+        to_cell_centre=Point((to_cell._x1+to_cell._x2)/2,(to_cell._y1+to_cell._y2)/2)
+        if undo is False:
+           line=Line(self_centre, to_cell_centre)
+           self._win.draw_line(line, "red")
+        else:
+            line=Line(self_centre, to_cell_centre)
+            self._win.draw_line(line, "grey")

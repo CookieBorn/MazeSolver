@@ -12,6 +12,7 @@ def main():
     cell=Cell(win, p1,p2,True,False,True, False)
     cell2=Cell(win,p2,p3,False,True,False,True)
     cell.draw()
+    cell.draw_move(cell2)
     cell2.draw()
     win.wait_for_close()
 
