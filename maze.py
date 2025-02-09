@@ -17,6 +17,7 @@ class Maze:
         if seed is not None:
             random.seed(seed)
         self._break_walls(0,0)
+        self._reset_cells_visited()
 
     def _create_cells(self):
         for j in range(self.num_cols):
@@ -82,6 +83,11 @@ class Maze:
                 self._cells[i][j].left_wall=False
                 self._cells[rand_cell[0]][rand_cell[1]].right_wall=False
             self._break_walls(rand_cell[0],rand_cell[1])
+
+    def _reset_cells_visited(self):
+        for i in range(len(self._cells)):
+            for j in range(len(self._cells[i])):
+                self._cells[i][j].visited=False
 
 
 
