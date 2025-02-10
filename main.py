@@ -8,9 +8,11 @@ from maze import Maze
 
 def main():
     win = Window(800, 600)
-    size_x=(600-20)//20
-    size_y=(800-20)//30
-    maze=Maze(10,10, 10,10, size_x,size_y,win)
+    num_rows=5
+    num_col=5
+    size_x=(800-20)//num_col
+    size_y=(600-20)//num_rows
+    maze=Maze(10,10, num_rows,num_col, size_x,size_y,win)
     win.wait_for_close()
 
 
