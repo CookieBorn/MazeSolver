@@ -23,11 +23,11 @@ class Maze:
         self._reset_cells_visited()
         self.solve()
         if self.solve() is True:
-            self.win.canvas.create_oval((self.win.width/8)*3,(self.win.height/8)*3, (self.win.width/8)*5, (self.win.height/8)*5, fill="white")
-            self.win.canvas.create_text(self.win.width/2,self.win.height/2, text="Solution Found!!", fill="green", font=('Helvetica 15 bold'))
+            self.win.canvas.create_oval((self.win.width/8)*3+100,(self.win.height/8)*3, (self.win.width/8)*5+100, (self.win.height/8)*5, fill="white")
+            self.win.canvas.create_text(self.win.width/2+100,self.win.height/2, text="Solution Found!!", fill="green", font=('Helvetica 15 bold'))
         elif self.solve() is False:
-            self.win.canvas.create_oval((self.win.width/8)*3,(self.win.height/8)*3, (self.win.width/8)*5, (self.win.height/8)*5, fill="white")
-            self.win.canvas.create_text(self.win.width/2,self.win.height/2, text="No Solution Found!!", fill="red", font=('Helvetica 15 bold'))
+            self.win.canvas.create_oval((self.win.width/8)*3+100,(self.win.height/8)*3, (self.win.width/8)*5+100, (self.win.height/8)*5, fill="white")
+            self.win.canvas.create_text(self.win.width/2+100,self.win.height/2, text="No Solution Found!!", fill="red", font=('Helvetica 15 bold'))
 
 
     def _create_cells(self):
